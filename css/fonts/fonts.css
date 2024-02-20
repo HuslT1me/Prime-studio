@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "GillSans";
+  src: url(./GillSansLightC.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GillSans";
+  src: url(./GillSansC.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: "GillSans";
+    src: url(./GillSans-SemiBold.woff) format("WOFF");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GillSans";
+    src: url(./GillSansC-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+  
+  
+  
