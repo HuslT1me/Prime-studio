@@ -30,19 +30,6 @@ body::-webkit-scrollbar {
   font-size: clamp(0.625rem, 0.4833rem + 0.5742vw, 1rem);
 }
 
-.text-dec-line::before {
-  
-}
-
-.offers-dec-line::before {
-  position: absolute;
-  content: "";
-  display: block;
-  border-top: 1px solid black;
-  top: 0;
-  height: 0;
-}
-
 
 
 .promo__title > h1 {
@@ -80,9 +67,61 @@ body::-webkit-scrollbar {
   width: 124px;
 }
 
-
-.offers-title-clamp {
+.offers__title-left > h2 { 
   font-size: clamp(2.5rem, 1.9643rem + 2.6786vw, 4.375rem);
+  font-weight: 300;
+  line-height: 100px;
+  text-transform: uppercase;
+  line-height: 100px;
+} 
+
+.offers__title-left > p { 
+  letter-spacing: 0.9px;
+  position: relative;
+  font-size: 24px;
+  line-height: 32px;
+  padding-top: 32px;
+  margin-bottom: 60px;
+}
+
+
+.offers__title-left > p::before {
+  position: absolute;
+  content: "";
+  display: block;
+  border-top: 1px solid black;
+  top: 0;
+  height: 0;
+  width: 125px;
+}
+
+.offers__title-right > h2 { 
+  font-size: clamp(2.5rem, 1.9643rem + 2.6786vw, 4.375rem);
+  font-weight: 300;
+  line-height: 100px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+} 
+
+
+.offers__title-right > p { 
+  letter-spacing: 0.9px;
+  position: relative;
+  font-size: 24px;
+  line-height: 32px;
+  padding-top: 32px;
+  margin-bottom: 60px;
+}
+
+
+.offers__title-right > p::before {
+  position: absolute;
+  content: "";
+  display: block;
+  border-top: 1px solid black;
+  top: 0;
+  height: 0;
+  width: 125px;
 }
 
 .offers__wrapper-slider {
@@ -153,11 +192,23 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.crossed-out-text {
-  background-image: url(../media/icons/strikethrough.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+.offers__description > p {
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  margin-bottom: 18px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.learn-btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 34px;
+  height: 1px;
+  background-color: #ffffff;
+  right: -45px;
+  bottom: 43%;
 }
 
 .select {
@@ -260,6 +311,13 @@ body::-webkit-scrollbar {
   color: black;
 }
 
+.crossed-out-text {
+  background-image: url(../media/icons/strikethrough.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .line-dec::after {
   content: "";
   position: absolute;
@@ -270,30 +328,22 @@ body::-webkit-scrollbar {
   left: 0;
 }
 
-.learn-btn::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 34px;
-  height: 1px;
-  background-color: #ffffff;
-  right: -45px;
-  bottom: 43%;
+.offers__price-text > p{
+  max-width: 403px;
+  line-height: 26px;
+  letter-spacing: 0.6px;
+  font-weight: 300;
+  font-size: 16px;
 }
 
-/* .list {
-  background-image: url(../media/img/promo-footer.webp);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color: #ffffff;
-} */
+.offers__price-text.left-text > p{
+  max-width: 416px;
+}
 
 
 .list > div { 
   padding-top: 258px;
 }
-
-
 
 .list__title > h3 {
   font-size: 40px;
@@ -477,6 +527,22 @@ body::-webkit-scrollbar {
   .promo > div  { 
     background-position: center center;
   }
+
+  .offers__title-left > p {
+    margin-bottom: 50px;
+    padding-top: 36px;
+    line-height: 28px;
+  }
+
+  .offers__title-right > p {
+    margin-bottom: 50px;
+    padding-top: 36px;
+    line-height: 28px;
+  }
+
+  .offers__price-text > p{
+    line-height: 24px;
+  }
 }
 
 @media only screen and (max-width: 1220px) {
@@ -509,14 +575,14 @@ body::-webkit-scrollbar {
     margin-top: -158px;
   }
   
-}
+  .offers__title-left > p {
+    max-width: 477px;
+  }
 
-@media only screen and (min-width:1100px) and (max-width: 1219px) { 
-  .list__title-item > p {
-    margin-right: 140px;
+  .offers__title-right > p {
+    max-width: 477px;
   }
 }
-
 
 @media only screen and (max-width: 1023px) {
   
@@ -563,7 +629,38 @@ body::-webkit-scrollbar {
     padding-top: 46px;
   }
   
+  .offers__title-left > h2 { 
+    line-height: 80px;
+  }
+
+  .offers__title-left > p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    padding-top: 28px;
+  }
+
+  .offers__title-right > h2 { 
+    line-height: 80px;
+  }
+
+  .offers__title-right > p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    padding-top: 28px;
+  }
+
+  .offers__price-text > p{
+    max-width: max-content;
+  }
 }
+
+@media only screen and (min-width:1100px) and (max-width: 1219px) { 
+  .list__title-item > p {
+    margin-right: 140px;
+  }
+}
+
+
 
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -650,8 +747,6 @@ body::-webkit-scrollbar {
   .promo > div {
     height: calc(100vh - 99px);
   }
-
-
 
   .list__title > h3 {
     padding-top: 38px;
@@ -747,6 +842,30 @@ body::-webkit-scrollbar {
 
 }
 
+@media only screen and (max-width: 767px) {
+  .offers__title-left > h2 { 
+    line-height: 30px;
+  }
+
+  .offers__title-left > p {
+    font-size: 20px; 
+    padding-top: 22px;
+    margin-bottom: 32px;
+  }
+
+  .offers__title-right > h2 { 
+    letter-spacing: 0.5px;
+    line-height: 30px;
+  }
+
+  .offers__title-right > p {
+    font-size: 20px; 
+    padding-top: 22px;
+    margin-bottom: 32px;
+  }
+
+}
+
 
 @media only screen and (max-width: 639px) {
   .promo > div {
@@ -766,6 +885,26 @@ body::-webkit-scrollbar {
 
   .promo__title > h1 {
     letter-spacing: 3px;
+  }
+
+  .offers__title-left > p::before { 
+    width: 88px;
+  }
+
+  .offers__title-right > p::before { 
+    width: 88px;
+  }
+
+  .offers__description > p {
+    letter-spacing: 0.6px;
+    margin-bottom: 2px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .offers__price-text > p{
+    max-width: 349px;
+    font-size: 12px;
   }
 }
 
