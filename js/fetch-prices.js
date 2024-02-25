@@ -1,6 +1,6 @@
 let newObjLesson;
 
-async function fetchPrices(category, value, oldPriceElem, priceElem){
+function fetchPrices(category, value, oldPriceElem, priceElem){
   fetch(`https://ba8cca62efa88fa6.mokky.dev/lessons?category=${category}&value=${value}`)
   .then(res => {
   return res.json();
@@ -11,6 +11,3 @@ async function fetchPrices(category, value, oldPriceElem, priceElem){
     priceElem.textContent = data[0].price;
   });
 }
-
-
-

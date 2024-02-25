@@ -2,6 +2,8 @@ let select = function () {
     let selectHeader = document.querySelectorAll('.select__header');
     let selectItem = document.querySelectorAll('.select__item');
   
+    defaultPrice(); // Первый запрос дефолтных цен при первой подгрузке страницы
+
     selectHeader.forEach(item => {
         item.addEventListener('click', selectToggle)
     });
@@ -23,7 +25,20 @@ let select = function () {
     function selectToggle() {
         this.parentElement.classList.toggle('is-active');
     }
-  
+    
+    function defaultPrice(){
+        const selectElems = Array.from(document.querySelectorAll('.select'));
+        selectElems.forEach(elem => {
+            const currentElem = elem.querySelector('.select__current');
+            const category = currentElem.dataset.category;
+            const value = currentElem.dataset.value;
+            const wrapperSelect = currentElem.closest('.js-selected-wrapper');
+            const currentPriceElem = wrapperSelect.querySelector('.price-current');
+            const oldPriceElem = wrapperSelect.querySelector('.old-price');
+            fetchPrices(category, value, oldPriceElem, currentPriceElem);
+        })
+    }
+
     function selectChoose() {
         let text = this.innerText,
             select = this.closest('.select'),
@@ -47,6 +62,3 @@ let select = function () {
   };
 
   select();
-  
-  
-  
