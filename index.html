@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="./css/reset.css"> -->
   <link rel="stylesheet" href="./css/fonts/fonts.css">
   <link rel="stylesheet" href="./css/promo-u.css">
   <link rel="stylesheet" href="./src/output.css">
@@ -114,7 +113,7 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="js-selected-wrapper">
               <div class="offers__description flex flex-col mb-[38px] lg:mb-[50px] xl:mb-[57px]">
                 <p>
                   Откройте для себя прекрасный мир йоги. Независимо от Ваших целей, уровня или возраста, у нас есть классы и
@@ -141,18 +140,18 @@
               <div class="mt-[41px] md:mt-10 lg:mt-[50px] xl:mt-[60px]">
               
                   <div class="flex mb-[38px] max-w-[200px] md:max-w-[248px] lg:max-w-[269px] lg:mb-[50px] xl:max-w-[282px]">
-                    <div class="select">
+                    <div class="select select-yoga">
                       <div class="select__header">
-                        <span class="select__current">4 занятия</span>
+                        <span class="select__current" data-value="4" data-id="1" data-category="yoga">4 занятия</span>
                         <div class="mr-icon">
                           <div class="select__icon"></div>
                         </div>
                       </div>
                     
                       <div class="select__body">
-                        <div class="select__item">4 занятия</div>
-                        <div class="select__item">8 занятий</div>
-                        <div class="select__item">12 занятий</div>
+                        <div class="select__item" data-value="4" data-id="1" data-category="yoga">4 занятия</div>
+                        <div class="select__item" data-value="8" data-id="2" data-category="yoga">8 занятий</div>
+                        <div class="select__item" data-value="12" data-id="3" data-category="yoga">12 занятий</div>
                       </div>
                     </div>
                   </div>
@@ -164,12 +163,12 @@
                         <div class="inline-block mt-0.5 md:mt-2">
                           <div class="line-dec relative after:w-[82px] pb-9 md:after:w-[90px] md:pb-7 lg:after:w-[100px] lg:pb-[43px] xl:after:w-[125px]">
                             <span class="crossed-out-text tracking-[2.5px] text-xl mr-4 md:mr-[22px] md:text-[28px] px-[5px] xl:px-2.5 xl:text-3xl xl:leading-[32px]">
-                              8 I80 <span>₽</span>
+                              <span class="old-price">8 I80</span> ₽ 
                             </span>
                           </div>
                         </div>
                         <span class="leading-none max-h-[50px] font-bold tracking-[3.5px] text-[40px] md:text-[45px] xl:text-[50px]">
-                          6 780 <span>₽</span>
+                          <span class="price-current">6 780</span> ₽
                         </span>
                       </div>
                     </div>
@@ -220,7 +219,7 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="js-selected-wrapper">
               <div class="offers__description flex flex-col mb-[34px] lg:mb-[50px] xl:mb-[57px]">
                 <p>
                   Пилатес, пожалуй, лучшая из методик восстановления баланса состояния мышц, связок, фасций, коррекции
@@ -243,18 +242,18 @@
               </div>
               <div class="mt-[38px] md:mt-10 lg:mt-[50px] xl:mt-[60px]">
                 <div class="flex mb-[38px] max-w-[200px] md:max-w-[248px] lg:mb-[50px] lg:max-w-[269px] xl:max-w-[282px]">
-                    <div class="select">
+                    <div class="select select-pilates">
                       <div class="select__header select__header--orange">
-                        <span class="select__current">8 занятий</span>
+                        <span class="select__current" data-value="8" data-id="5" data-category="pilates">8 занятий</span>
                         <div class="mr-icon">
                           <div class="select__icon"></div>
                         </div>
                       </div>
-                    
+
                       <div class="select__body">
-                        <div class="select__item select__item--orange">4 занятия</div>
-                        <div class="select__item select__item--orange">8 занятий</div>
-                        <div class="select__item select__item--orange">12 занятий</div>
+                        <div class="select__item select__item--orange" data-value="4" data-id="4"  data-category="pilates">4 занятия</div>
+                        <div class="select__item select__item--orange" data-value="8" data-id="5"  data-category="pilates">8 занятий</div>
+                        <div class="select__item select__item--orange" data-value="12" data-id="6"  data-category="pilates">12 занятий</div>
                       </div>
                     </div>
                 </div>
@@ -265,12 +264,12 @@
                         <div class="inline-block mt-0.5 md:mt-2"> 
                           <div class="line-dec relative after:w-[82px] pb-9 sm:after:w-[110px] md:pb-7 xl:after:w-[125px] lg:pb-[43px]">
                             <span class="crossed-out-text tracking-[3.5px] mr-[16px] sm:mr-5 px-[2px] text-xl md:text-[28px] lg:mr-[14px] lg:px-[5px] xl:px-2.5 xl:text-3xl xl:leading-[32px]">
-                              I7 I80 <span> ₽</span>
+                              <span class="old-price"> I7 I80 </span> ₽
                             </span>
                           </div>
                         </div>
                         <span class="leading-none max-h-[50px] font-bold tracking-[4.5px] text-[40px] md:text-[45px] xl:text-[50px]">
-                          I2 780 <span>₽</span>
+                          <span class="price-current">I2 780</span> ₽
                         </span>
                       </div>
                     </div>
@@ -508,12 +507,12 @@
               <div class="col l-6 m-12">
                   <ul class="apps-list">
                       <li>
-                          <a class="gp" style="background-image: ./media/img/gp-ico.jpg"
+                          <a class="gp" style="background-image: url(./media/img/gp-ico.jpg)"
                               href="https://play.google.com/store/apps/details?id=me.fitcloud.app.primesport.android">
                           </a>
                       </li>
                       <li>
-                          <a class="as" style="background-image: ./media/img/as-ico.jpg" 
+                          <a class="as" style="background-image: url(./media/img/as-ico.jpg)" 
                           href="https://itunes.apple.com/ru/app/prime/id910475830?ls=1&amp;mt=8">
                           </a>
                       </li>
@@ -552,12 +551,13 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/jquery-migrate-1.2.1.min.js"></script>
   <script src="./js/slick.min.js"></script>
-
+  <script src="js/fetch-prices.js"></script>
   <script src="js/sliders.js"> </script>
   <script src="js/popup.js"></script>
   <script src="js/toggle-text.js"></script>
   <script src="js/dropdown.js"></script>
   <script src="js/slider-trainers.js"></script>
+  
   <div class="popup-holder" id="card-callback-popup" style="inset: 0; display: none;">
     <!-- style="display:none;" добавить чтобы скрыть по умолчанию-->
     <div class="bg" style="height: 1274px; width: 1440px;">&nbsp;</div>
@@ -578,8 +578,8 @@
           <div class="form-row">
             <input type="email" class="text" name="CardForm[email]" placeholder="E-mail" required="">
           </div>
-          <span class="info-text">Нажимая кнопку “перезвоните мне”, вы соглашаетесь с <a
-              href="/uploads/settings/files/ПОЛИТИКА в отношении обработки персональных данных (2).pdf?download=1">условиями
+          <span class="info-text">Нажимая кнопку “перезвоните мне”, вы соглашаетесь с <a 
+            href="/uploads/settings/files/ПОЛИТИКА в отношении обработки персональных данных (2).pdf?download=1">условиями
               обработки персональных данных</a>.</span>
           <div class="submit-row">
             <button type="submit" class="btn btn-subsidiary"><span>перезвоните мне</span></button>

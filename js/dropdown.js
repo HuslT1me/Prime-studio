@@ -27,17 +27,25 @@ let select = function () {
     function selectChoose() {
         let text = this.innerText,
             select = this.closest('.select'),
-            currentText = select.querySelector('.select__current');
-        currentText.innerText = text;
+            currentElem = select.querySelector('.select__current');
+            currentElem.innerText = text;
+            currentElem.dataset.value = this.dataset.value;
+        const wrapperSelect = this.closest('.js-selected-wrapper');
+        const currentPriceElem = wrapperSelect.querySelector('.price-current');
+        const oldPriceElem = wrapperSelect.querySelector('.old-price');
         select.classList.remove('is-active');
-  
+        if(this.closest('.select-yoga')) {
+            const category = currentElem.dataset.category;
+            const value = currentElem.dataset.value;
+            fetchPrices(category, value, oldPriceElem, currentPriceElem);
+        } else if(this.closest('.select-pilates')) {
+            const category = currentElem.dataset.category;
+            const value = currentElem.dataset.value;
+            fetchPrices(category, value, oldPriceElem, currentPriceElem);
+        }
     }
-  
   };
 
-
-  
-  
   select();
   
   
