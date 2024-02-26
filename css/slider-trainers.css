@@ -133,6 +133,7 @@
     background: rgba(118, 196, 199, 0.8);
     overflow-y: auto;
     position: absolute;
+    width: 100%;
 }
 
 .our-team .slick-slide:hover .text-item { 
