@@ -1,0 +1,551 @@
+/* Typography
+*/
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 4px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* Lists
+*/
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+svg:not(:root) { overflow: hidden; }
+
+/* Tables
+*/
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+/* ==|== primary styles =====================================================
+   Author: Amark
+========================================================================== */
+
+.col1,
+.col1-1,
+.col-l,
+.col2,
+.col1-2,
+.col2-2 {
+    float:left;
+    height:100%;
+}
+
+.col1 {
+    width:220px;
+}
+.col-left1 {
+    margin-left:220px;
+}
+.col1-1{
+    width:320px;
+}
+.col-l {
+    width:220px;
+    float:right;
+}
+.col2 {
+    width:240px;
+}
+.col1-2 {
+    width:400px;
+}
+.col2-2 {
+    width:480px;
+}
+/* CONTENT */
+
+.page-content {
+    position:relative;
+    height:100%;
+    overflow:hidden;
+    z-index:1;
+    font-size: 11px;
+}
+.page-content-wrp {
+   /* position:relative;*/
+}
+
+.nav-left-block {
+    position:absolute;
+    width:220px;
+    min-height:120px;
+    left:0;
+    z-index:2;
+}
+.nav-left-block .one-block{
+    background:#353538;
+    position:relative;
+    width:220px;
+    height:20%;
+    max-height:120px;
+    font-family: 'h-thin';
+}
+.nav-left-block .one-block h2 {
+    margin:0 auto;
+    text-align:center;
+    font-family: 'h-thin';
+    font-size:22px/118px;
+    letter-spacing: 0.02em;
+    font-weight:normal;
+}
+.nav-left-block .one-block h2 a,
+.nav-left-block .one-block h2 span {
+    display:block;
+    text-decoration:none;
+    font:22px/120px 'h-thin';
+    font-weight:normal;
+    color:#fff;
+    height:100%;
+}
+.nav-left-block .sub-block {
+    height:60px;
+    text-transform:uppercase;
+    text-align:left;
+    background:#353538;
+}
+.nav-left-block .sub-block > a{
+    display:block;
+    line-height:60px;
+    padding-left:45px;
+    background-color:#404043;
+    text-decoration:none;
+    -webkit-transition: background-color 300ms ease-in;
+    -moz-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+}
+.nav-left-block.spec .sub-block > a{padding-left:35px;}
+.nav-left-block .sub-block > a:hover,
+.nav-left-block .sub-block > a.active {background-color:#353538;}
+.nav-left-block .sub-block li{list-style:none;}
+.nav-left-block .sub-block a{text-decoration:none;}
+
+.nav-left-block .one-block.feed-fb{
+    max-height:100%;
+}
+.nav-left-block .one-block.feed-fb ul{
+    padding-left:40px;
+    width:100px;
+    list-style:none;
+    margin:0;
+}
+.nav-left-block .one-block.feed-fb ul li.post-fb{
+    border-top:1px solid #4582b6;
+    border-bottom:1px solid #4582b6;
+    padding:10px 0;
+    text-transform:uppercase;
+    font-family: pf_dindisplay_proregular;
+}
+.nav-left-block .one-block.feed-fb ul li.post-fb + .post-fb{
+    border-top:0;
+}
+.nav-left-block .one-block.feed-fb ul li.post-fb a {line-height:14px;text-decoration:none;}
+.nav-left-block .one-block.feed-fb ul li.post-fb a:hover {color:#fff;}
+
+.scroll-blocks {
+    position:absolute;
+    width:120px;
+    max-width:120px;
+    min-width:80px;
+    height:240px;
+    /* max-height:240px; Ð²â€ â€™ moved to js*/
+    min-height:220px;
+    right:0px;
+    bottom: 0;
+    background:#353538;
+    z-index:2;
+}
+.scroll-blocks a{
+    display:block;
+    position:relative;
+    width:100%;
+    height:50%;
+    text-indent:-30000px;
+    overflow:hidden;
+}
+.scroll-blocks a:hover,
+.scroll-blocks a.hover {
+    background: #75c4c7;
+    -webkit-transition: background-color 300ms ease-in;
+    -moz-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+}
+.scroll-blocks a span{
+    display:block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-top:-9px;
+    margin-left:-8px;
+    width:16px;
+    height:18px;
+    background:url("../../images/scroll-arrows.png") no-repeat 0 0;
+}
+.scroll-blocks a[href='#next'] span,
+.scroll-blocks a:first-child span {
+    background-position:-16px 0;
+}
+
+/* CONTENT BLOCKS */
+.content-blocks {
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    padding-left: 220px;
+}
+.content-blocks .wrp, .touchcarousel {
+    max-height:100%;
+    height:100%;
+    width:100%;
+    min-width:100%;
+    overflow:hidden;
+}
+
+
+
+/* TIMELINE */
+/*.timeline .page-content-wrp {position:relative;}*/
+.timeline .table-column {width:240px;height:100%;float:left;}
+.timeline .table-cell {position:relative;background:#636466;height:12.8%;width:239px;border-right:1px solid #737476;padding: 0 9px;}
+.timeline .table-cell:nth-child(even) {background:#58595c;}
+.timeline .table-header {background:#4a4b4d;height:11%;position:relative;border:0;width:240px;}
+
+.timeline .shedule-download span {padding-left:32px;}
+.timeline .nav-left-block {width:220px;height:100%;}
+.timeline .nav-left-block .table-cell{background:#4b4c4f;height:12.8%;width:220px;border:0;-webkit-backface-visibility: hidden;}
+.timeline .nav-left-block .table-cell a,
+.timeline .nav-left-block .table-cell span {position:absolute;top:0;bottom:0;left:40px;height:20px;margin:auto;line-height:20px;outline:none;white-space:nowrap;}
+.timeline .nav-left-block .table-header {background:#353538;height:11%;}
+.timeline .nav-left-block .table-header a{left:3px;outline:none;}
+.timeline .nav-left-block .table-header > a  img{
+    transition-duration: 0.5s;
+    transition-property: transform;
+}
+.timeline .nav-left-block .table-header > a.active img{
+    -webkit-transform: rotate(90deg);     /* Chrome and other webkit browsers */
+    -moz-transform: rotate(90deg);        /* FF */
+    -o-transform: rotate(90deg);          /* Opera */
+    -ms-transform: rotate(90deg);         /* IE9 */
+    transform: rotate(90deg);
+}
+.timeline .nav-left-block .table-header .dd-menu{
+    position:absolute;
+    display:none;
+    top:40px;
+    width:220px;
+    background:#353538;
+    z-index:2;
+}
+.timeline .nav-left-block .table-header .dd-menu ul{padding:0px 0 20px 25px;margin:0;}
+.timeline .nav-left-block .table-header .dd-menu li{
+    position:relative;
+    list-style:none;
+    height:22px;
+}
+.timeline .nav-left-block .table-cell:after{
+    position:absolute;
+    display:block;
+    width:140px;
+    height:1px;
+    background:#737476;
+    content:' ';
+    bottom:0px;left:40px;
+}
+.timeline .nav-left-block .table-cell.off:after,
+.timeline .nav-left-block .table-cell.selected:after {display:none;}
+.timeline .nav-left-block .table-header:after,
+.timeline .nav-left-block .table-cell:last-child:after {display:none;}
+
+.timeline .table-cell.selected{
+    background:#404043;
+    -webkit-transition: background-color 300ms ease-in;
+    -moz-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+}
+.timeline .table-header > span{
+    position:absolute;
+    top:0;bottom:0;left:30px;
+    height:20px;
+    width:210px;
+    margin:auto;
+    line-height:20px;
+    font-size:14px;
+    border-right:1px solid #737476;
+}
+.timeline .table-header > span sup{padding-left:2px;font-size:10px;}
+.timeline .table-header a{
+    display:block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 16px;
+    margin: auto;
+    outline:none;
+}
+.timeline .table-header a,
+.timeline .table-cell > a,
+.timeline .table-cell > span{
+    display:inline-block;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+.timeline .table-cell .one-prog {	position:relative;-webkit-backface-visibility: hidden;}
+.timeline .table-cell .one-prog > a {
+    text-decoration:none;
+    text-transform:uppercase;
+}
+.timeline .table-cell .one-prog {padding-top:4px;}
+.timeline .table-column:last-child *{border:0;}
+.timeline .table-cell .one-prog.active .timeline-point{
+    visibility:visible;
+    opacity:1;
+    -webkit-transform: scale( 1 );
+    -moz-transform: scale( 1 );
+    -o-transform: scale( 1 );
+    -ms-transform: scale( 1 );
+    transform: scale( 1 );
+}
+
+.table-cell a.man-del{position:absolute;right:5px;top:0;display:block; width:15px;height:15px; background:url("../img/ico-redcross.png");text-indent:-100000px;background-size:contain;}
+
+.timeline-point {
+    position:absolute;
+    display:block;
+    visibility:hidden;
+    background:#404041;
+    width:220px;
+    min-height:70px;
+    padding:15px 15px 15px 25px;
+    color:#fff;
+    font-size:12px;
+    box-shadow: 0 6px 20px -5px #333333;
+    z-index:3;
+    cursor:default;
+
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: scale( 0.1 );-moz-transform: scale( 0.1 );-o-transform: scale( 0.1 );-ms-transform: scale( 0.1 );transform: scale( 0.1 );
+}
+.timeline-point h3 {
+    text-transform:uppercase;
+    font-size: 13px;
+    margin: 0 0 16px;
+    float:left;
+    width:150px;
+}
+.timeline-point h3 a {color:#fff;text-decoration:none; }
+.timeline-point > span {
+    display:block;
+    float:right;
+    width:40px;
+    height:16px;
+    background:#58585a;
+    text-align: center;
+    text-transform:uppercase;
+    font-size:10px;
+}
+.timeline-point > div.tp-coach {display:none;width:125px;float:left;}
+.timeline-point > div.tp-coach > img {
+    display:block;
+    float:left;
+    width:36px;
+    height:36px;
+}
+.timeline-point > div.tp-coach > span {display:inline-block;padding-left:16px;}
+.timeline-point > div.tp-description {display:block;padding-top:10px;}
+.timeline-point > div.tp-description:before { content: ""; display: table; }
+.timeline-point > hr { clear:both;margin:0;height: 0;border: 0; }
+
+.timeline-point > a {
+    display:inline-block;
+    float:right;
+    width:50px;
+    height:20px;
+    margin-top: 10px;
+    text-transform:uppercase;
+    line-height:20px;
+    border:3px solid #8fc748;
+    text-align:center;
+    text-decoration: none;
+    outline:none;
+}
+.timeline-point > a:hover {color:#fff;}
+
+
+.ios7 #page-footer {bottom:20px;}
+
+/* ==|== media queries ===
+===================================================
+   EXAMPLE Media Query for Responsive Design.
+========================================================================== */
+@media screen and (min-device-width: 1200px){
+    .news-item .item-text-block {width:480px;}
+}
+
+
+@media screen and (orientation: portrait){
+    #rotator {display:block;}
+}
+@media screen and (orientation: landscape){
+    #rotator {display:none;}
+}
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+.infoTable {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Addons */
+@media screen and (max-width: 480px) {
+    .index-page a.scroll-arrow[href='#prev'] span {left: 15px !important;}
+    .index-page a.scroll-arrow[href='#next'] span {right: 15px !important;}
+    .index-page .nav-left-block {position: absolute !important; width: 50% !important; left: 80px !important;}
+    .index-page .nav-left-block .one-block {max-height: 100% !important;}
+
+    .col1 {width: 50% !important;}
+
+    #fb-root {display: none;}
+    #widget {display: none;}
+    #trener-form {display: none;}
+    .h-promo.col2 {display: none;}
+    .h-user.col2 {display: none;} /* facebook + Ð Ñ—Ð¡Ð‚Ð Ñ‘Ð Ñ•Ð Â±Ð¡Ð‚Ð ÂµÐ¡ÐƒÐ¡â€šÐ Ñ‘ Ð Ñ”Ð Â°Ð¡Ð‚Ð¡â€šÐ¡Ñ“ */
+    .h-contacts.col-l {width: 100%;}
+    .timing.workday, .timing.holidays {position: relative !important; padding-left: 5px !important;}
+
+    .page-content {overflow: scroll !important; float: left; max-width: 100%; height: auto !important; width: 100%;}
+    .page-content-wrp { width: 100%;}
+    .col-l.makers {display: none;}
+    .col1.join-fb, .fb-like {display: none !important;}
+    .btn-subscribe {position: relative !important;}
+    .one-block.feed-fb.h-fill {display: none;}
+    .nav-left-block {
+        float: left;
+        display: inline-block;
+        left: 0 !important;
+        min-height: 0 !important;
+        width: 33% !important;
+        position: relative;
+    }
+
+
+    .timeline .nav-left-block .table-cell a, .timeline .nav-left-block .table-cell span {
+        left: 20px !important;
+    }
+    .nav-left-block .one-block {max-height: 50px !important; width: 100% !important;}
+    .nav-left-block .one-block h2 span {font: 22px/50px 'h-thin' !important;}
+    .scroll-blocks a {width: 50% !important; float: right; height: 100% !important;}
+    .sub-block {width: 50%; float: left; height: 50px !important;}
+
+    .page-content-wrp .shedule-download {display: none;}
+    .one-block {display: none;}
+    .one-block.purp {display: block;}
+
+    .sub-block {height: 35px !important;}
+    .sub-block a {line-height: 35px !important;}
+    .news-item .scroll-arrows, .news-item .scroll-arrows a {width: 40px !important;}
+    .news-item .content-blocks {overflow: visible !important;}
+    .item-text-block {overflow: hidden !important; width: 100% !important;}
+    .news-item .image-block {padding-left: 40px;}
+    jdiv.button_1O.__jfakecls {display: none;}
+    .content-blocks {width: 67% !important;padding:0 !important;}
+}
+
+
+@media only screen and (max-width: 767px) {
+    .page-content,
+    .page-content-wrp {
+        position: relative;
+    }
+    .scroll-blocks {
+        bottom: 0 !important;
+        float: left;
+        height: 50px !important;
+        min-height: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: none !important;
+    }
+    .timeline .nav-left-block .table-cell {
+        width: 100% !important;
+    }
+    .timeline .nav-left-block .table-cell:after {
+        width: 60%;
+        left:20%;
+    }
+    .timeline .nav-left-block .table-cell a, .timeline .nav-left-block .table-cell span {
+        left: 20% !important;
+    }
+    .infoTable > div {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .nav-left-block {
+        float: left;
+        display: inline-block;
+        left: 0 !important;
+        min-height: 0 !important;
+        width: 20% !important;
+        position: relative;
+    }
+    .content-blocks {width: 80% !important;padding:0 !important;}
+}
