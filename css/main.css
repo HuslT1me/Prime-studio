@@ -905,10 +905,6 @@ body::-webkit-scrollbar {
     place-self: center;
   }
 
-  .promo > div {
-    height: calc(100vh - 99px);
-  }
-
   .list__title > h3 {
     padding-top: 38px;
     line-height: 34px;
@@ -1044,11 +1040,6 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 639px) {
-  .promo > div {
-    /* background: url("../media/img/promo-adaptive.webp");
-    background-position: center; */
-    height: calc(100vh - 65px);
-  }
 
   .list__items-right > ul {
     gap: 20px;
