@@ -65,14 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active');
         videoList.forEach((video) => {
           if (video.closest('.slick-current')) {
+            if ( video.readyState === 4 ) {
+              video.play();
+          } else {
+            video.load();
+            video.addEventListener('loadstart',() => addClass);
+            video.addEventListener('canplay', () => removeClass);
             video.play();
+          }
+            // video.removeEventListener('loadstart', addClass);
+            // video.removeEventListener('canplay', removeClass);
           }
         });
       } else {
-        entry.target.classList.remove('active');
         videoList.forEach((video) => {
           video.pause();
         });
@@ -80,8 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  function addClass() {
+    const slideActive = sliderContainer.querySelector('.slick-current');
+    const spinner = slideActive.querySelector('.spinner');
+    console.log(spinner);
+    spinner.classList.add('loading');
+  }
+
+  function removeClass() {
+    const slideActive = sliderContainer.querySelector('.slick-current');
+    const spinner = slideActive.querySelector('.spinner');
+    console.log(spinner);
+    spinner.classList.remove('loading');
+  }
+
   const options = {
-    rootMargin: '200px 0px 200px 0px', 
+    rootMargin: '200px 0px 200px 0px',
     threshold: 1,
   };
 
@@ -96,7 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videoList.forEach((video) => {
       if (video.closest('.slick-current')) {
+        video.load();
+        video.addEventListener('loadstart', addClass);
+        video.addEventListener('canplay', removeClass);
         video.play();
+        // video.removeEventListener('loadstart', addClass);
+        // video.removeEventListener('canplay', removeClass);
       } else {
         video.load();
       }
