@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const video = slide.querySelector('.reviews__video');
       if (video.classList.contains('muted-video')) {
         video.classList.remove('muted-video');
-        btn.textContent = 'Mut';
+        btn.classList.remove('btn-muted');
         video.muted = false;
       } else {
         video.classList.add('muted-video');
-        btn.textContent = 'Unmut';
+        btn.classList.add('btn-muted');
         video.muted = true;
       }
     });
