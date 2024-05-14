@@ -702,9 +702,21 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1220px) {
+@media (min-width: 1090px) and (max-width: 1230px) {
   .promo-inner ul {
-    padding-inline-start: clamp(1px, 7.22%, 91px) !important;
+    padding-inline-start: clamp(35px, 3.34%, 41px) !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1089px) {
+  .promo-inner ul {
+    padding-inline-start: 47px !important;
+  } 
+}
+
+@media (min-width: 1024px) and (max-width: 1050px) {
+  .promo__text p {
+    margin-block-start: 8px;
   }
 }
 
@@ -721,7 +733,7 @@ body::-webkit-scrollbar {
 
 @media (min-width: 1024px) {
   .promo-inner ul {
-    padding-inline-start: 91px;
+    padding-inline-start: 41px;
   }
 
   .left {
