@@ -717,6 +717,7 @@ video {
 
 .hidden {
   display: none;
+  visibility: visible !important;
 }
 
 .aspect-square {
