@@ -1,64 +1,54 @@
 let select = function () {
     let selectHeader = document.querySelectorAll('.select__header');
     let selectItem = document.querySelectorAll('.select__item');
-  
-    defaultPrice(); // Первый запрос дефолтных цен при первой подгрузке страницы
 
     selectHeader.forEach(item => {
         item.addEventListener('click', selectToggle)
     });
-  
+
     selectItem.forEach(item => {
         item.addEventListener('click', selectChoose)
     });
-    
+
     window.addEventListener("click", (evt) => {
         if(!evt.target.closest('.select')) {
-        const selectList = Array.from(document.querySelectorAll('.select'));
-        selectList.forEach(sel => {
-            sel.classList.remove('is-active');
-        })
-        } 
+            const selectList = Array.from(document.querySelectorAll('.select'));
+            selectList.forEach(sel => {
+                sel.classList.remove('is-active');
+            })
+        }
     })
-        
 
     function selectToggle() {
         this.parentElement.classList.toggle('is-active');
     }
-    
-    function defaultPrice(){
-        const selectElems = Array.from(document.querySelectorAll('.select'));
-        selectElems.forEach(elem => {
-            const currentElem = elem.querySelector('.select__current');
-            const category = currentElem.dataset.category;
-            const value = currentElem.dataset.value;
-            const wrapperSelect = currentElem.closest('.js-selected-wrapper');
-            const currentPriceElem = wrapperSelect.querySelector('.price-current');
-            const oldPriceElem = wrapperSelect.querySelector('.old-price');
-            fetchPrices(category, value, oldPriceElem, currentPriceElem);
-        })
-    }
 
     function selectChoose() {
-        let text = this.innerText,
-            select = this.closest('.select'),
-            currentElem = select.querySelector('.select__current');
-            currentElem.innerText = text;
-            currentElem.dataset.value = this.dataset.value;
-        const wrapperSelect = this.closest('.js-selected-wrapper');
-        const currentPriceElem = wrapperSelect.querySelector('.price-current');
-        const oldPriceElem = wrapperSelect.querySelector('.old-price');
-        select.classList.remove('is-active');
-        if(this.closest('.select-yoga')) {
-            const category = currentElem.dataset.category;
-            const value = currentElem.dataset.value;
-            fetchPrices(category, value, oldPriceElem, currentPriceElem);
-        } else if(this.closest('.select-pilates')) {
-            const category = currentElem.dataset.category;
-            const value = currentElem.dataset.value;
-            fetchPrices(category, value, oldPriceElem, currentPriceElem);
-        }
-    }
-  };
 
-  select();
+        let text = this.innerText,
+            productBox = this.closest('.product_box'),
+            select = productBox.querySelector('.select'),
+            currentElem = productBox.querySelector('.select__current');
+            btnPay = productBox.querySelector('.open-pay-card-callback-popup');
+        currentElem.innerText = text;
+        currentElem.dataset.bundele_id = this.dataset.bundele_id;
+
+        const currentPriceElem = productBox.querySelector('.price-current');
+        const oldPriceElem = productBox.querySelector('.old-price');
+        const priceTextElem = productBox.querySelector('.offers__price-text');
+        select.classList.remove('is-active');
+
+        btnPay.dataset.bundle_id = this.dataset.bundele_id;
+        btnPay.dataset.bundle_title = text;
+
+        fetchPrices(
+            currentElem.dataset.product_id,
+            currentElem.dataset.bundele_id,
+            oldPriceElem,
+            currentPriceElem,
+            priceTextElem
+        );
+    }
+};
+
+select();

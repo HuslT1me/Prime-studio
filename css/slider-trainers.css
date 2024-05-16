@@ -180,7 +180,6 @@
     letter-spacing: 0.8px;
     text-transform: uppercase;
     max-width: 288px;
-    word-break: break-word;
 }
   
 .condition__trainer-name > p:nth-child(2) {
@@ -280,7 +279,7 @@
         position: absolute;
         width: 39px;
         height: 8px;
-        top: 200px;
+        top: 32px;
         right: 11px;
         transform: translateY(0);
     }

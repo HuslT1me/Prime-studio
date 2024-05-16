@@ -1,13 +1,22 @@
+let isSendForm = false;
+
 $(document).ready(function(){
 	initPopups();
 	initAjaxForms();
+    $('input[type="tel"], input.tel').inputmask({
+        mask: '+7 (999) 999-99-99',
+        showMaskOnHover: false
+    });
 });
 
 function initAjaxForms(){
-    $('.ajax-form').on('submit', function(){
-        var form = $(this),
+    $('body').on('beforeSubmit', '.ajax-form', function (e) {
+        e.preventDefault();
+
+        const form = $(this),
             data = form.serialize(),
             formResult = form.find('.form-result');
+
         $.ajax({
             url: form.attr('action'),
             beforeSend: function() {
@@ -20,34 +29,107 @@ function initAjaxForms(){
             },
             data: data,
             type: form.attr('method'),
+            cache: false,
             success: function(resp) {
-                if (form.attr('data-form-name') == 'CardForm') {
-                    gtag('event', 'form_sent', {'event_category': 'card'});
-                }
-                if (form.attr('data-form-name') == 'NewsForm') {
-                    gtag('event', 'form_sent', {'event_category': 'promotion'});
-                }
-                if (form.attr('data-form-name') == 'ServiceForm') {
-                    gtag('event', 'form_sent', {'event_category': 'service'});
-                }
-                if(resp.msg) {
+                if(resp.success === true) {
+                    console.log('success ok');
+
                     form.removeClass('sending');
                     form.addClass('success-send');
-                    formResult.html('<h4 class="result-msg">'+resp.msg+'</h4>');
+                    formResult.html('<h4 class="result-msg">'+resp.message+'</h4>');
+                    isSendForm = true;
                 } else {
+                    console.log('success false');
+
                     form.removeClass('sending');
                     form.find('.btn').prop('disabled', false);
+
                     if(resp.errors) {
-                        var formName = $(this).attr('data-form-name');
+                        $.each(form.find(".help-block"), function() {
+                            $(this).empty();
+                            $(this).closest(".form-group").removeClass("has-error");
+                        });
                         $.each(resp.errors, function(key, val) {
-                            var inputName = formName + '[' + key + ']';
-                            $('[name="'+inputName+'"]').after("<div class=\"error-block\">"+val+"</div>");
-                            if(key == 500) {
-                                formResult.html('<h4 class="error-msg">'+resp.msg+'</h4>');
-                            }
+                            form.find(".field-" + key +" .help-block").empty().html(val);
+                            form.find(".field-" + key).addClass("has-error");
                         });
                     }
                 }
+            },
+            error: function(resp){
+                if(resp.status && resp.status === 500) {
+                    formResult.html('<h4 class="error-msg">'+resp.responseJSON.message+'</h4>');
+                }
+                console.log(data);
+            }
+            /*statusCode: {
+                500: function(data) {
+                    alert(data);
+                }
+            }*/
+        });
+        return false;
+    });
+
+    $('body').on('beforeSubmit', 'form.pay-form', function (e) {
+        e.preventDefault();
+
+        const form = $(this),
+            data = form.serialize(),
+            formResult = form.find('.form-result');
+
+        $.ajax({
+            url: form.attr('action'),
+            beforeSend: function() {
+                form.addClass('sending');
+                form.find('[type="submit"]').prop('disabled', true);
+                form.find('.error-block').each(function() {
+                    $(this).remove();
+                });
+                formResult.empty();
+            },
+            data: data,
+            type: form.attr('method'),
+            cache: false,
+            success: function(resp) {
+                if(resp.success === true && resp.confirm_url) {
+                    console.log('success ok');
+
+                    form.removeClass('sending');
+                    form.addClass('success-send');
+                    formResult.html('<h4 class="result-msg">'+resp.message+'</h4>');
+
+                    window.location = resp.confirm_url;
+                    // window.open(resp.confirm_url, '_blank').focus();
+                } else {
+                    console.log('success false');
+
+                    form.removeClass('sending');
+                    form.find('.btn').prop('disabled', false);
+
+                    if(resp.error && resp.error.description) {
+                        formResult.html('<h4 class="error-msg">'+resp.error.description+'</h4>');
+                    }
+
+                    if(resp.errors) {
+                        console.log('asdasd');
+
+                        $.each(form.find(".help-block"), function() {
+                            $(this).empty();
+                            $(this).closest(".form-group").removeClass("has-error");
+                        });
+                        $.each(resp.errors, function(key, val) {
+                            form.find(".field-" + key +" .help-block").empty().html(val);
+                            form.find(".field-" + key).addClass("has-error");
+                        });
+                    }
+                }
+            },
+            error: function(resp){
+                if(resp.status && resp.status === 500) {
+                    formResult.html('<h4 class="error-msg">'+resp.responseJSON.message+'</h4>');
+                }
+                console.log(data);
             }
         });
         return false;
@@ -64,6 +146,20 @@ function initPopups(){
                 popup.find('.form_card').val(cardId);
             }
         });
+
+    $('body')
+        .popup({
+            "opener":".open-pay-card-callback-popup",
+            "popup_holder":"#pay-card-callback-popup",
+            "beforeOpen": function(popup) {
+                popup.find('#productTitleBox').empty().html($(this).attr('data-product_title'));
+                popup.find('#bundleTitleBox').empty().html($(this).attr('data-bundle_title'));
+
+                popup.find('#customer-product_id').val($(this).attr('data-product_id'));
+                popup.find('#customer-bundle_id').val($(this).attr('data-bundle_id'));
+            }
+        });
+
     // $('body')
     //     .popup({
     //         "opener":".open-direction-event-callback-popup",
@@ -181,5 +277,4 @@ $.fn.popup = function(o){
         });
     });
 };
-
 
