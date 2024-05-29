@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function addClass() {
     const slideActive = sliderContainer.querySelector('.slick-current');
     const spinner = slideActive.querySelector('.spinner');
-    console.log(spinner);
     spinner.classList.add('loading');
   }
 
