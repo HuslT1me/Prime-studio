@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function removeClass() {
     const slideActive = sliderContainer.querySelector('.slick-current');
     const spinner = slideActive.querySelector('.spinner');
-    console.log(spinner);
     spinner.classList.remove('loading');
   }
 
@@ -112,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const slideshow = $('.reviews__slider');
   // Run when slides change
   slideshow.on('afterChange', function (event, slick, currentSlide) {
-    console.log('change');
 
     videoList.forEach((video) => {
       if (video.closest('.slick-current')) {

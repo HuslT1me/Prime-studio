@@ -958,11 +958,11 @@ body::-webkit-scrollbar {
   }
 
   .select {
-    max-width: 250px;
+    max-width: 280px;
   }
 
   .select__header {
-    max-width: 250px;
+    max-width: 280px;
   }
 
   .select.is-active .select__body {
@@ -971,7 +971,6 @@ body::-webkit-scrollbar {
 
   .select__current {
     margin: auto 0;
-    padding-left: 17px;
     font-weight: 600;
     font-size: 22px;
     text-overflow: ellipsis;

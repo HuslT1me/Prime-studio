@@ -15,20 +15,58 @@
     <title>СТУДИЯ ЙОГИ И ПИЛАТЕСА</title>
     <meta name="keywords" content="Prime" />
     <meta name="description" content="Prime" />
-    <link href="/css/calendar/touchcarousel.css?v=0.1" rel="stylesheet" />
-    <link href="/css/calendar/calendar.css?v=0.1" rel="stylesheet" />
-    <link href="/css/fonts/fonts.css" rel="stylesheet" />
-    <link href="/css/promo-u.css" rel="stylesheet" />
-    <link href="./css/output.css" rel="stylesheet" />
-    <link href="/css/slider-trainers.css" rel="stylesheet" />
+    <link href="./css/calendar/touchcarousel.css?v=0.1" rel="stylesheet" />
+    <link href="./css/calendar/calendar.css?v=0.1" rel="stylesheet" />
+    <link href="./css/fonts/fonts.css" rel="stylesheet" />
+    <link href="./css/promo-u.css" rel="stylesheet" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link href="./css/slider-trainers.css" rel="stylesheet" />
     <link href="./css/main.css" rel="stylesheet" />
-    <link href="/css/slick/slick.css" rel="stylesheet" />
+    <link href="./css/slick/slick.css" rel="stylesheet" />
   </head>
   <body>
+    <style>
+      .promo > div:first-child {
+        background: url(./media/img/promo-header-hd.webp);
+        min-height: calc(100vh - 118px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+      }
+
+      @media screen and (max-width: 880px) {
+        .promo > div:first-child {
+          background-position: left center;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .promo > div:first-child {
+          min-height: calc(100vh - 80px);
+          display: flex;
+          align-items: end;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .promo > div:first-child {
+          min-height: calc(100vh - 65px);
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .promo > div:first-child {
+          background: url(./media/img/promo-mobile-hd.webp);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    </style>
     <header class="h-[65px] bg-black sm:h-[80px] md:h-[96px] lg:h-[118px]">
-      <div class="container-sm mx-5 lg:mx-[80px] xl:mx-[107px]">
+      <div class="container mx-5 lg:mx-[80px] xl:mx-[107px]">
         <div
-          class="grid h-[65px] grid-cols-[1fr_auto_1fr] grid-rows-[100%] items-center gap-x-5 sm:h-[80px] md:h-[96px] lg:h-[118px]"
+          class="grid h-[65px] grid-cols-[1fr_auto_1fr] grid-rows-[100%] items-center gap-x-5 px-5 sm:h-[80px] md:h-[96px] md:px-0 lg:h-[118px]"
         >
           <div class="flex h-full items-center gap-x-5 lg:gap-x-[41px]">
             <address
@@ -37,7 +75,7 @@
               г. Ростов-на-Дону, ул. Cуворова, 91
             </address>
             <a
-              class="hidden items-baseline gap-x-2 text-nowrap font-light italic text-[#76C4C7] transition duration-300 hover:text-white md:flex"
+              class="visible hidden items-baseline gap-x-2 text-nowrap font-light italic text-[#76C4C7] transition duration-300 hover:text-white md:!flex"
               href="#"
               >на карте
               <svg width="17" height="6" viewBox="0 0 17 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,14 +91,14 @@
               <a href="#">
                 <img
                   class="logo h-[100px] w-[94px] pt-3 sm:pt-1.5 md:h-full md:w-[130px] md:pt-0 lg:w-full"
-                  src="./media/icons/logo.svg"
+                  src="../media/icons/logo.svg"
                   alt="primesport logo"
                 />
               </a>
             </div>
           </div>
           <div class="header--right-col flex items-center justify-end gap-x-[54px]">
-            <div class="hidden gap-x-5 md:flex lg:gap-x-9">
+            <div class="visible hidden gap-x-5 md:!flex lg:gap-x-9">
               <a
                 class="text-sm font-light text-[#C9C9C9] transition duration-300 hover:text-[#76C4C7] lg:text-lg"
                 href="#schedule"
@@ -74,7 +112,7 @@
             </div>
             <div class="flex h-[43px] items-center sm:h-auto sm:justify-end">
               <a
-                class="btn-header open-card-callback-popup lg:no-wrap flex h-auto flex-wrap items-center justify-center border-[1px] border-[#B0B0B0] px-2.5 text-[13px] leading-4 text-[#C9C9C9] transition duration-300 hover:border-[#75C4C7] hover:bg-[#75C4C7] sm:w-[50%] sm:flex-row sm:px-[24px] sm:tracking-[0.4px] md:h-[34px] md:w-full md:max-w-full lg:h-auto lg:py-1 lg:text-base xl:h-[45px] xl:py-0 xl:text-xl"
+                class="btn-header open-card-callback-popup lg:no-wrap flex h-auto flex-wrap items-center justify-center border-[1px] border-[#B0B0B0] px-2.5 text-[13px] leading-4 text-[#C9C9C9] transition duration-300 hover:border-[#75C4C7] hover:bg-[#75C4C7] sm:flex-row sm:tracking-[0.4px] md:h-[34px] md:w-full md:max-w-full lg:h-auto lg:px-[24px] lg:py-1 lg:text-base xl:h-[45px] xl:py-0 xl:text-xl"
                 data-card="1"
                 href="#"
                 >свяжитесь со мной</a
@@ -87,44 +125,7 @@
     <main class="main">
       <section class="promo">
         <div>
-          <style>
-            .promo > div:first-child {
-              background: url(./media/img/promo-header-hd.webp);
-              min-height: calc(100vh - 118px);
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top center;
-            }
-
-            @media screen and (max-width: 880px) {
-              .promo > div:first-child {
-                background-position: left center;
-              }
-            }
-
-            @media screen and (max-width: 768px) {
-              .promo > div:first-child {
-                min-height: calc(100vh - 80px);
-                display: flex;
-                align-items: end;
-              }
-            }
-
-            @media screen and (max-width: 640px) {
-              .promo > div:first-child {
-                min-height: calc(100vh - 65px);
-              }
-            }
-
-            @media screen and (max-width: 500px) {
-              .promo > div:first-child {
-                background: url(./media/img/promo-mobile-hd.webp);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-              }
-            }
-          </style>
+          
           <div class="container relative flex h-full items-end justify-center sm:items-center sm:justify-end">
             <div
               class="promo-inner flex w-full flex-col p-[60px_0_29px] sm:p-[60px_0] md:items-center md:justify-center lg:w-[calc(50%_+_90px)] lg:p-[108px_0_198px]"
@@ -198,24 +199,24 @@
                     <div class="offers__slide">
                       <img
                         class="offers__slide-img"
-                        src="/files/storage/12/_1/12_1708939607.jpg"
-                        srcset="/files/storage/12/_1/12_1708939607.jpg 2x"
+                        src="./media/img/yoga-slider.webp"
+                        srcset="./media/img/yoga-slider-hd.webp 2x"
                         alt="slider"
                       />
                     </div>
                     <div class="offers__slide">
                       <img
                         class="offers__slide-img"
-                        src="/files/storage/st/ud/studio2_1709302345.jpg"
-                        srcset="/files/storage/st/ud/studio2_1709302345.jpg 2x"
+                        src="./media/img/pilates-slider.webp"
+                        srcset="./media/img/pilates-slider-hd.webp 2x"
                         alt="slider"
                       />
                     </div>
                     <div class="offers__slide">
                       <img
                         class="offers__slide-img"
-                        src="/files/storage/20/22/2022-12-09_02-23-52_1709302524.png"
-                        srcset="/files/storage/20/22/2022-12-09_02-23-52_1709302524.png 2x"
+                        src="./media/img/yoga-slider.webp"
+                        srcset="./media/img/yoga-slider-hd.webp 2x"
                         alt="slider"
                       />
                     </div>
@@ -276,9 +277,7 @@
                 </div>
 
                 <div class="product_box mt-[41px] md:mt-10 lg:mt-[50px] xl:mt-[60px]">
-                  <div
-                    class="mb-[38px] flex max-w-[200px] md:max-w-[248px] lg:mb-[50px] lg:max-w-[269px] xl:max-w-[300px]"
-                  >
+                  <div class="mb-[39px] flex lg:mb-[48px]">
                     <div class="select">
                       <div style="background-color: #76c4c7" class="select__header">
                         <span class="select__current" data-bundele_id="13917" data-product_id="1"
@@ -428,21 +427,20 @@
                 </div>
 
                 <div class="product_box mt-[38px] md:mt-10 lg:mt-[50px] xl:mt-[60px]">
-                  <div
-                    class="mb-[38px] flex max-w-[200px] md:max-w-[248px] lg:mb-[50px] lg:max-w-[269px] xl:max-w-[300px]"
-                  >
+                  <div class="mb-[38px] flex lg:mb-[48px]">
                     <div class="select">
-                      <div style="background-color: #fca252" class="select__header select__header--orange">
-                        <span class="select__current" data-bundele_id="13923" data-product_id="2">Разовое занятие</span>
+                      <div style="background-color: #fca252" class="select__header">
+                        <span class="select__current" data-bundele_id="13917" data-product_id="1"
+                          >Разовое посещение</span
+                        >
                         <div class="mr-icon">
                           <div class="select__icon"></div>
                         </div>
                       </div>
-
-                      <div style="background-color: #fca252" class="select__body">
-                        <div class="select__item" data-bundele_id="13923">Разовое занятие</div>
-                        <div class="select__item" data-bundele_id="13920">4 ПТ Реформер</div>
-                        <div class="select__item" data-bundele_id="13922">8 ПТ Реформер</div>
+                      <div class="select__body" style="background-color: #fca252">
+                        <div class="select__item" data-bundele_id="13917">Разовое посещение</div>
+                        <div class="select__item" data-bundele_id="13915">8 Посещений</div>
+                        <div class="select__item" data-bundele_id="13919">12 Посещений</div>
                       </div>
                     </div>
                   </div>
@@ -491,7 +489,7 @@
       <section class="list">
         <div
           style="
-            background: url('/files/storage/pr/om/promo-footer_1708349002.webp');
+            background: url('./media/img/promo-footer-hd.webp');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: 50% center;
@@ -2004,7 +2002,7 @@
       <div class="popup-action" style="margin: 0px">
         <a href="#" class="close-popup"><span>x</span></a>
 
-        <div class="banner-box"><img src="/files/storage/75/63/756329219311463_1712689173.jpg" /></div>
+        <div class="banner-box"><img src="" /></div>
 
         <div class="content">
           <div class="text-center">
@@ -2070,151 +2068,22 @@
       </div>
     </div>
 
-    <script src="/assets/82778e0/jquery.js"></script>
-    <script src="/assets/88faa879/yii.js"></script>
-    <script src="/js/calendar/jquery.touchcarousel-1.2.min.js?v=0.1"></script>
-    <script src="/js/calendar/jquery.rotate.js?v=0.1"></script>
-    <script src="/js/calendar/jquery.mousewheel.min.js?v=0.1"></script>
-    <script src="/js/calendar/jquery.blur.js"></script>
-    <script src="/js/calendar/calendar.js?v=0.1"></script>
-    <script src="/assets/88faa879/yii.activeForm.js"></script>
-    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/js/jquery.inputmask.min.js"></script>
-    <script src="/js/tab.js"></script>
-    <script src="/js/slick.min.js"></script>
-    <script src="/js/sliders.js"></script>
-    <script src="/js/popup.js"></script>
-    <script src="/js/toggle-text.js"></script>
-    <script src="/js/fetch-prices.js"></script>
-    <script src="/js/dropdown.js"></script>
-    <script src="/js/slider-trainers.js"></script>
-    <script>
-      jQuery(function ($) {
-        jQuery('#formRequest').yiiActiveForm([], []);
-        jQuery('#payRequest').yiiActiveForm([], []);
-        jQuery('#actionRequest').yiiActiveForm([], []);
-        const timeAction = 30;
-
-        let isShowAction = false;
-        let isTimeToShowAction = timeAction;
-        let isTimeCloseAction = 0;
-
-        const popupAction = $('#action-callback-popup');
-
-        $('body').popup({
-          opener: '.action-btn',
-          popup_holder: '#action-callback-popup',
-          popup: '.popup-action',
-          beforeOpen: function (popup) {},
-          close: function () {
-            isShowAction = false;
-            isTimeToShowAction = timeAction;
-            isTimeCloseAction = 0;
-          },
-        });
-
-        // -------------------- EXIT DETECTED --------------------
-        let addEvent = function (obj, evt, fn) {
-          if (obj.addEventListener) {
-            obj.addEventListener(evt, fn, false);
-          } else if (obj.attachEvent) {
-            obj.attachEvent('on' + evt, fn);
-          }
-        };
-
-        addEvent(document, 'mouseout', function (event) {
-          event = event ? event : window.event;
-          let from = event.relatedTarget || event.toElement;
-          if ((!from || from.nodeName == 'HTML') && event.clientY <= 100) {
-            if (!isSendForm && !isShowAction && isTimeCloseAction >= 10) {
-              popupAction.show();
-              isShowAction = true;
-            }
-          }
-        });
-        // -------------------- EXIT DETECTED --------------------
-
-        Date.prototype.addDays = function (days) {
-          this.setDate(this.getDate() + days);
-          return this;
-        };
-
-        Date.prototype.addHours = function (h) {
-          this.setTime(this.getTime() + h * 60 * 60 * 1000);
-          return this;
-        };
-
-        function initializeClock(clock, endTime) {
-          if (!clock) return;
-
-          function getTimeRemaining(endTime) {
-            let t_seconds = 0;
-            let t_minutes = 0;
-            let t_hours = 0;
-            let t_days = 0;
-            let time = Date.parse(endTime) - Date.parse(new Date());
-
-            if (time > 0) {
-              t_seconds = Math.floor((time / 1000) % 60);
-              t_minutes = Math.floor((time / 1000 / 60) % 60);
-              t_hours = Math.floor((time / (1000 * 60 * 60)) % 24);
-              t_days = Math.floor(time / (1000 * 60 * 60 * 24));
-            }
-
-            return {
-              total: time,
-              days: t_days,
-              hours: t_hours,
-              minutes: t_minutes,
-              seconds: t_seconds,
-            };
-          }
-
-          function updateClock() {
-            const time = getTimeRemaining(endTime);
-
-            const days = time.days >= 100 ? time.days : ('0' + time.days).slice(-2);
-
-            clock.innerHTML =
-              days +
-              ' ' +
-              ('0' + time.hours).slice(-2) +
-              ':' +
-              ('0' + time.minutes).slice(-2) +
-              ':' +
-              ('0' + time.seconds).slice(-2);
-
-            if (time.total <= 0) {
-              clearInterval(timeInterval);
-            }
-          }
-          updateClock();
-          const timeInterval = setInterval(updateClock, 1000);
-        }
-
-        const actionTimer = document.getElementById('actionTimer');
-
-        if (actionTimer) {
-          const deadline = new Date();
-          deadline.addDays(parseInt(actionTimer.dataset.days));
-          deadline.addHours(parseInt(actionTimer.dataset.hours));
-
-          initializeClock(actionTimer, deadline);
-        }
-
-        const actionShowInterval = setInterval(function () {
-          isTimeToShowAction--;
-          isTimeCloseAction++;
-
-          if (isTimeToShowAction <= 0) {
-            if (!isSendForm && !isShowAction) {
-              popupAction.show();
-              isShowAction = true;
-            }
-            isTimeToShowAction = timeAction;
-          }
-        }, 1000);
-      });
-    </script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/yii.js"></script>
+    <script src="./js/calendar/jquery.touchcarousel-1.2.min.js?v=0.1"></script>
+    <script src="./js/calendar/jquery.rotate.js?v=0.1"></script>
+    <script src="./js/calendar/jquery.mousewheel.min.js?v=0.1"></script>
+    <script src="./js/calendar/jquery.blur.js"></script>
+    <script src="./js/calendar/calendar.js?v=0.1"></script>
+    <script src="./js/yii.activeForm.js"></script>
+    <script src="./js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./js/jquery.inputmask.min.js"></script>
+    <script src="./js/tab.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/sliders.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/fetch-prices.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/slider-trainers.js"></script>
   </body>
 </html>
