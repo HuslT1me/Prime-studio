@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        aquaColor: '#76c4c7',
-        orangeColor: '#fca252'
-      }
+        accentColor: '#484D28',
+        accentColorAlt: '#DE9232',
+      },
     },
   },
   plugins: [],

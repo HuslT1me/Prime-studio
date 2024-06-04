@@ -38,7 +38,7 @@
   display: block;
   position: absolute;
   bottom: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   inline-size: 100%;
   max-inline-size: 125px;
   content: '';
@@ -52,7 +52,7 @@
 
 .profit__content dl {
   margin-block-end: 47px;
-  border-block-end: 1px solid black;
+  border-block-end: 1px solid white;
   padding-block-end: 39px;
 }
 

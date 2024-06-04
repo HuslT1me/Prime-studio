@@ -130,7 +130,7 @@
     z-index: 20;
     transition: visibility 0.3s linear, opacity 0.3s linear;
     opacity: 0;
-    background: rgba(118, 196, 199, 0.8);
+    background: rgba(222, 146, 50, 0.8);
     overflow-y: auto;
     position: absolute;
     width: 100%;

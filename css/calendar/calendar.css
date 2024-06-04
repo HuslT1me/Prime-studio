@@ -184,7 +184,7 @@ td { vertical-align: top; }
 }
 .scroll-blocks a:hover,
 .scroll-blocks a.hover {
-    background: #75c4c7;
+    background: #DE9232;
     -webkit-transition: background-color 300ms ease-in;
     -moz-transition: background-color 300ms ease-in;
     -o-transition: background-color 300ms ease-in;

@@ -118,7 +118,7 @@ body::-webkit-scrollbar {
   display: block;
   position: absolute;
   top: 0;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   width: 125px;
   height: 0;
   content: '';
@@ -145,7 +145,7 @@ body::-webkit-scrollbar {
   display: block;
   position: absolute;
   top: 0;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   width: 125px;
   height: 0;
   content: '';
@@ -261,15 +261,14 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   cursor: pointer;
-  border: 1px solid black;
-  background: #76c4c7;
+  border: 1px solid white;
   width: 100%;
   max-width: 377px;
   height: 66px;
 }
 
 .select__header.select__header--orange {
-  background: #fca252;
+  background: #DE9232;
 }
 
 .select.is-active .select__body {
@@ -331,9 +330,9 @@ body::-webkit-scrollbar {
   left: 0;
   z-index: 20;
   border-top: 0;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
   width: inherit;
 }
 
@@ -348,7 +347,7 @@ body::-webkit-scrollbar {
 .select__item {
   cursor: pointer;
   padding: 8.5px 24px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
   font-size: 30px;
   line-height: 32px;
@@ -356,7 +355,7 @@ body::-webkit-scrollbar {
 }
 
 .select__item:hover {
-  color: black;
+  color: white;
 }
 
 .crossed-out-text {
@@ -370,8 +369,8 @@ body::-webkit-scrollbar {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-bottom: 1px solid black;
-  background-color: #000;
+  border-bottom: 1px solid white;
+  background-color: white;
   height: 0;
   content: '';
 }
@@ -540,6 +539,10 @@ body::-webkit-scrollbar {
 .learn-more--active {
   grid-template-rows: 1fr;
   opacity: 1;
+  
+}
+
+.learn-more--active  div > p {
   padding: 10px 0;
 }
 
@@ -628,7 +631,7 @@ body::-webkit-scrollbar {
 
 .reviews__slider > .slick-dots button {
   border-radius: 50%;
-  background: #76c4c780;
+  background: rgba(222, 146, 50, 0.4);
   aspect-ratio: 1 / 1;
   width: 11px;
   font-size: 0;
@@ -636,7 +639,7 @@ body::-webkit-scrollbar {
 
 .reviews__slider > .slick-dots > .slick-active button {
   transition: 0.3s ease;
-  background: #76c4c7;
+  background: #DE9232;
 }
 
 .box-title {
@@ -1465,8 +1468,8 @@ form.ajax-form .form-row.has-error .help-block {
   animation: spinner-c7wet2 1s infinite linear;
   border-radius: 50%;
   background:
-    radial-gradient(farthest-side, #76c4c7 94%, #0000) top/9px 9px no-repeat,
-    conic-gradient(#0000 30%, #76c4c7);
+    radial-gradient(farthest-side, #DE9232 94%, #0000) top/9px 9px no-repeat,
+    conic-gradient(#0000 30%, #DE9232);
   width: 56px;
   height: 56px;
 }

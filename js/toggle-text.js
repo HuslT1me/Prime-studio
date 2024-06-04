@@ -5,7 +5,7 @@ const learnMoreRight = document.querySelector('.learn-more-r');
 
 learnBtnLeft.addEventListener('click', function(event){
     event.preventDefault();
-    if (learnBtnLeft.textContent.toLowerCase() == 'узнайте больше') {
+    if (learnBtnLeft.textContent.trim().toLowerCase() == 'узнайте больше') {
         learnBtnLeft.textContent = 'свернуть';
     } else if(learnBtnLeft.textContent.toLowerCase() == 'свернуть') { 
         learnBtnLeft.textContent = 'узнайте больше';
@@ -15,7 +15,7 @@ learnBtnLeft.addEventListener('click', function(event){
 
 learnBtnRight.addEventListener('click', function(event){
     event.preventDefault();
-    if (learnBtnRight.textContent.toLowerCase() == 'узнайте больше') {
+    if (learnBtnRight.textContent.trim().toLowerCase() == 'узнайте больше') {
         learnBtnRight.textContent = 'свернуть';
     } else if(learnBtnRight.textContent.toLowerCase() == 'свернуть') { 
         learnBtnRight.textContent = 'узнайте больше';
