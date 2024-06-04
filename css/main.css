@@ -546,6 +546,10 @@ body::-webkit-scrollbar {
   padding: 10px 0;
 }
 
+#trainers {
+  scroll-margin-block-start: 100px;
+}
+
 .reviews__slider {
   width: 100% !important;
 }
@@ -1214,6 +1218,16 @@ body::-webkit-scrollbar {
   }
 }
 
+@media (max-width: 768px) {
+  .promo .container,
+  .promo-yoga .container,
+  .promo-pilates .container {
+    margin: 0 auto;
+    max-inline-size: calc(100% - 40px) !important;
+  }
+}
+
+
 @media (max-width: 640px) {
   .promo__text > p::before {
     left: 50%;
@@ -1252,14 +1266,6 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 768px) {
-  .promo .container,
-  .promo-yoga .container,
-  .promo-pilates .container {
-    margin: 0 auto;
-    max-inline-size: calc(100% - 40px) !important;
-  }
-}
 
 /** Additional css **/
 form.ajax-form .form-row.has-error .help-block {
